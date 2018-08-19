@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'users/show'
   resources :items
   resources :tweets
   ActiveAdmin.routes(self)
