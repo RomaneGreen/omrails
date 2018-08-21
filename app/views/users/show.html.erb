@@ -1,10 +1,13 @@
 <div class="container">
 
   <div class="row">
-    <% if current_user.following?(@user) %>
-      <p><%= link_to "Unfollow", unfollow_user_path(@user.username),method: :delete%></p>
-    <% else %>
-      <p><%= link_to "follow", follows_user_path(@user.username),method: :post%></p>
+    <% if user_signed_in? %>
+
+      <% if current_user.following?(@user) %>
+        <p><%= link_to "Unfollow", unfollow_user_path(@user.username),method: :delete%></p>
+      <% else %>
+        <p><%= link_to "follow", follows_user_path(@user.username),method: :post%></p>
+      <% end %>
     <% end %>
     <table class='table-inverse inverse'>
       <thead>

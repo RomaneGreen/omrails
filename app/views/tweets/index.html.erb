@@ -2,7 +2,14 @@
 
   <!-- <h1>Tweets</h1> -->
   <div class="row">
-    <%=link_to current_user.username, user_path(current_user.username)%>
+    <% if user_signed_in? %>
+      <!-- true -->
+      <p>Your Account</p>
+      <%=link_to current_user.username, user_path(current_user.username)%>
+    <% else %>
+      <%=link_to "Sign up now",signup_path%>
+    <% end %>
+
     <table class='table-inverse inverse'>
       <thead>
         <tr>
@@ -15,22 +22,24 @@
       <tbody>
         <% @tweets.each do |tweet| %>
           <tr>
-            <td><%= tweet.user.username %></td>
-            <td><%= tweet.content %></td>
-            <td><%= link_to 'Show', tweet %></td>
-            <% if tweet.user == current_user %>
-              <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-              <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <% end %>
+            <%= link_to tweet,class:"list-group-action" do %>
+            <td ="list-group-item-heading"><%= tweet.user.username %></td>
+            <td ="list-group-item-text"><%= tweet.content %></td>
+          <% end %>
+          <td><%= link_to 'Show', tweet %></td>
+          <% if tweet.user == current_user %>
+            <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
+            <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
 
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-    <br>
-  </div>
-  <% if user_signed_in? %>
-    <%= link_to 'New Tweet', new_tweet_path %>
-  <% end %>
+  <br>
+</div>
+<% if user_signed_in? %>
+  <%= link_to 'New Tweet', new_tweet_path %>
+<% end %>
 </div>
