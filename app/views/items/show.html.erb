@@ -20,7 +20,7 @@
     <%= @item.text %>
   </p>
 
-  <% if item.user == current_user %>
+  <% if @item.user == current_user %>
     <%= link_to 'Edit', edit_item_path(@item) %>
   <% end %>
   |
