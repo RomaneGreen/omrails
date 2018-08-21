@@ -9,4 +9,5 @@ class User < ApplicationRecord
           validates :name,presence: true
           acts_as_followable
             acts_as_follower
+            acts_as_voter
 end
