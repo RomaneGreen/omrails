@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
 
-  get 'users/show'
+  get 'users/:username', to: 'users#show', as: 'user'
   resources :items
   resources :tweets
   ActiveAdmin.routes(self)
   devise_for :users
   as :user do
-  get "signin" => 'devise/sessions#new'
-  get "signup" => 'devise/registrations#new'
-  delete "signout" => 'devise/sessions#destroy'
+  get "signin",to: 'devise/sessions#new'
+  get "signup" ,to: 'devise/registrations#new'
+  delete "signout" ,to: 'devise/sessions#destroy'
   end
   devise_for :views
   root 'pages#home'
-  get 'about' => 'pages#about'
-    get 'contact' => 'pages#contact'
+  get 'about', to: 'pages#about'
+    get 'contact', to: 'pages#contact'
 end
