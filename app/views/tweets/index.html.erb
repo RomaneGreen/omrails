@@ -24,7 +24,13 @@
           <tr>
             <%= link_to tweet,class:"list-group-action" do %>
             <td ="list-group-item-heading"><%= tweet.user.username %></td>
+            <td>
+              <% if tweet.image.present? %>
+                <p><%=image_tag tweet.image.url,size:250 %></p>
+              <% end %>
+            </td>
             <td ="list-group-item-text"><%= tweet.content %></td>
+
           <% end %>
           <td><%= link_to 'Show', tweet %></td>
           <% if tweet.user == current_user %>

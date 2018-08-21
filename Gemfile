@@ -26,6 +26,7 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem 'devise'
 gem 'acts_as_votable', '~> 0.11.1'
+gem "paperclip", "~> 6.0.0"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

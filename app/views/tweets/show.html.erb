@@ -11,14 +11,17 @@
         <strong>Content:</strong>
         <%= @tweet.content %>
       </p>
+      <strong>Pic:</strong>
+      <%= image_tag @tweet.image.url,size:250 %>
+    </p>
 
-      <% if @tweet.user == current_user %>
-        <td><%= link_to 'Edit', edit_tweet_path(@tweet) %></td>
-        <td><%= link_to 'Destroy', @tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
+    <% if @tweet.user == current_user %>
+      <td><%= link_to 'Edit', edit_tweet_path(@tweet) %></td>
+      <td><%= link_to 'Destroy', @tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
 
-      |
-      <%= link_to 'Back', tweets_path %>
-    </div>
+    |
+    <%= link_to 'Back', tweets_path %>
   </div>
+</div>
 </div>

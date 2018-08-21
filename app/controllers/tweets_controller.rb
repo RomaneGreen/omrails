@@ -16,6 +16,7 @@ class TweetsController < ApplicationController
   # GET /tweets/new
   def new
     @tweet = current_user.tweets.new
+
   end
 
   # GET /tweets/1/edit
@@ -60,6 +61,6 @@ class TweetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tweet_params
-      params.require(:tweet).permit(:user_id,:content)
+      params.require(:tweet).permit(:user_id,:content,:image)
     end
 end
