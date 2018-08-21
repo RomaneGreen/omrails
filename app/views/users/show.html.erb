@@ -1,16 +1,18 @@
 <div class="container">
 
   <div class="row">
-    <%=link_to current_user.username, user_path(current_user.username)%>
+    <% if current_user.following?(@user) %>
+      <p><%= link_to "Unfollow", unfollow_user_path(@user.username),method: :delete%></p>
+    <% else %>
+      <p><%= link_to "follow", follows_user_path(@user.username),method: :post%></p>
+    <% end %>
     <table class='table-inverse inverse'>
       <thead>
         <tr>
-          <th>Tweetname</th>
-          <th>Content</th>
+          <th>Tweets</th>
           <th colspan="3"></th>
         </tr>
       </thead>
-
       <tbody>
         <% @tweets.each do |tweet| %>
           <tr>
