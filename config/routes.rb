@@ -20,10 +20,14 @@ Rails.application.routes.draw do
      delete 'unvote' ,to: 'votes#destroy'
     end
   end
-  resources :tweets
-
+  resources :tweets do
+    resources :comments
+end
+  post 'create', to: 'comments#create'
   devise_for :views
   root 'pages#home'
   get 'about', to: 'pages#about'
     get 'contact', to: 'pages#contact'
+
+
 end
