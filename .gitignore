@@ -38,3 +38,6 @@
 ./devise
 devise
 /home/romane71193/Desktop/Twitbook/config/initializers/devise.rb
+
+# Ignore application configuration
+/config/application.yml
