@@ -16,11 +16,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/initializers/devise.rb
-/initializers
-/initializers/devise.rb
-./devise.rb
-devise.rb
+
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
@@ -34,3 +30,11 @@ devise.rb
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+
+/initializers
+/initializers
+/initializers/devise
+./devise
+devise
+/home/romane71193/Desktop/Twitbook/config/initializers/devise.rb
