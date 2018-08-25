@@ -2,9 +2,26 @@
 @import "pages";
 
 body {
-  background-color: #fffff0;
+  background-color: lightgrey;
 }
 
-p {
-  color: green;
+.homehead {
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.homepara {
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.abouthead {
+  font-family: sans-serif;
+  color: #007BFF;
+}
+
+.aboutpara {
+  color: grey;
 }
